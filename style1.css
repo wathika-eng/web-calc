@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    outline: 0;
+    transition: all 0.5s ease;
+}
+
+/*---------------------------------container-------------------*/
+.container {
+    width: 100%;
+    height: 100vh;
+    background: #30626d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator {
+    background: #0e1418;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+
+.calculator form input {
+    border: 0;
+    outline: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background: transparent;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.05), 7px 7px 17px rgba(0, 0, 0, 0.5);
+}
+
+form .display {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+form .display input {
+    text-align: right;
+    flex: 1;
+    font-size: 45px;
+    box-shadow: none;
+}
+
+form input.equal {
+    width: 145px;
+    font-weight: 800;
+    color: crimson;
+
+}
+
+form input.operator {
+    color: #33ffd8;
+}
+
+.operator:hover {
+    transform: scale(1.1);
+}
+
+/*------------------------------------------theme toggler----------------------------*/
+
+.theme-toggler {
+    position: relative;
+    display: flex;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.theme-toggler.active {
+    color: rgb(0, 0, 0);
+}
+
+.theme-toggler.active::before {
+    background-color: #fff;
+}
+
+.theme-toggler::before {
+    content: '';
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    z-index: -1;
+}
+
+#display {
+    margin: 0 10px;
+
+    width: auto;
+    max-width: 270px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 30px;
+    margin-bottom: 20px;
+    overflow-x: scroll;
+}
+
+#display::-webkit-scrollbar {
+    display: flex;
+    height: 3px;
+}
+
+/*---------------------------------- --light theme---------------------------------------------- */
+
+.calculator {
+    background: rgb(97, 96, 96);
+}
+
+
+/*-------------------------dark theme------------------------------------------ */
+
+.calculator.dark {
+    background-color: #071115;
+}
+
+/*--------------------------------------------small screens----------------------------------*/
+@media screen and (max-width: 480px) {
+    .container {
+        align-items: flex-end;
+    }
+
+    .calculator form input {
+        align-items: flex-end;
+    }
+}
